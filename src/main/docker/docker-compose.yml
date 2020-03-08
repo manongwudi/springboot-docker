@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  springboot:
+    image: springboot:1.0-SNAPSHOT
+    hostname: springboot
+    environment:
+      - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE:-debug}
+    ports:
+      - "9999:9090"
+    networks:
+      - mynet
+networks:
+  mynet:
+    external: true
